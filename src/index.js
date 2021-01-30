@@ -9,10 +9,12 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 import { composeWithDevTools } from 'redux-devtools-extension'
 
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+     <App />
+  </Provider>
   document.getElementById('root')
 );
 
