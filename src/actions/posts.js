@@ -6,3 +6,18 @@ export const getPosts = () => {
         .then(posts => dispatch({type: "FETCH_POSTS", payload: posts}))
     }
 }
+
+export const addPost = post => {
+    return (dispatch) => {
+        dispatch({type: "ADD_POST"})
+        fetch ('/posts', {
+            method: "POST",
+            body: JSON.stringify(post),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(post => dispatch({type: "POST_ADDED", payload: post}))
+    }
+}

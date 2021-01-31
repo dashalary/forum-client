@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
+import PostForm from './containers/PostForm'
 
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
         </div>
         <hr />
         <h2>Make a Post</h2>
+        <PostForm />
         <hr />
         <h2>Posts</h2>
       </div>
