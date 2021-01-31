@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux';
+
 
 class App extends Component {
   render() {
@@ -10,6 +12,9 @@ class App extends Component {
           <h1>Forum</h1>
         </div>
         <hr />
+        <h2>Make a Post</h2>
+        <hr />
+        <h2>Posts</h2>
       </div>
     );
   }
