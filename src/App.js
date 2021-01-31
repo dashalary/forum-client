@@ -3,7 +3,15 @@ import './App.css';
 import { connect } from 'react-redux';
 import PostForm from './containers/PostForm'
 import { getPosts } from './actions/posts'
+import PostList from './components/posts/PostList'
 
+// handleLoading = () => {
+//   if (this.props.loading) {
+//     return <div>Loading posts...</div>
+//   } else {
+//     return <PostList posts={this.props.posts} />
+//   }
+// }
 
 class App extends Component {
   render() {
@@ -17,6 +25,8 @@ class App extends Component {
         <PostForm />
         <hr />
         <h2>Posts</h2>
+        {/* {this.handleLoading()} */}
+        <PostList />
       </div>
     );
   }
