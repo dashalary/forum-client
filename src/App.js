@@ -22,6 +22,15 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  console.log("I am state", state);
+  return {
+    posts: state.postReducer.posts,
+    loading: state.postReducer.loading
+  }
+}
+
+export default connect(mapStateToProps, { getPosts })(App)
 // function App() {
 //   return (
 //     <div className="App">
