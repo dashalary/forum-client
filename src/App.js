@@ -20,10 +20,12 @@ class App extends Component {
     return (
       <div className="container-fluid">
         <div className="row title justify-content-center" style={{ paddingTop: '12px' }}>
-          <h1>Forum</h1>
+          {/* <h1>Forum</h1> */}
         </div>
         <hr />
+        
         <h2>Make a Post</h2>
+        <br></br>
         <PostForm />
         <hr />
         <h2>Posts</h2>

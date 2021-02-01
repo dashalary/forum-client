@@ -13,6 +13,8 @@ import {
   Route
 } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Home from './components/Home';
+import PostList from './components/posts/PostList';
 
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk))) // to be able to use getState and dispatch
@@ -22,6 +24,7 @@ ReactDOM.render(
     <Router>
      <NavBar />
         <Route exact path="/" component={Home} />
+        <Route exact path="/posts" component={PostList} />
           <div>
             <App />
           </div>
