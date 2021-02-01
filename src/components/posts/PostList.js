@@ -6,18 +6,17 @@ class PostList extends Component {
     render() {
         const { posts } = this.props;
         const postList = posts.map(post => {
-        return (
-            <li key={post.id}>
-                <Link to={`/posts/${post.id}`}>{post.content}</Link>
-            </li>
-        )
+            return (
+                <li key={post.id}>
+                    <Link to={`/posts/${post.id}`}>{post.content}</Link>
+                </li>
+            )
         })
         return (
           <ul>
               <br></br>
             {postList}
           </ul>
-        // <p>test</p>
         );
       }
 }

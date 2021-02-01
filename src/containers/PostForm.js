@@ -8,21 +8,37 @@ class PostForm extends Component {
         post: {
             content: "",
             author: "",
-            votes: 0
+            likes: 0
         },
         loading: false
     }
 
-    handleOnChange = event => {
-        // this.setState({...this.state,
-        // post: {...this.state.post,
-        //     content: 
+    // handleOnChange = event => {
+    //     // this.setState({...this.state,
+    //     // post: {...this.state.post,
+    //     //     content: 
 
-        // }
-    // })
-        const { value, name } = event.target
+    //     // }
+    // // })
+    //     const { value, name } = event.target
+    //     this.setState({
+    //         post: {
+    //         [name]: value
+    //         }
+    //     })
+    // }
+
+    handleOnChangeContent = event => {
         this.setState({
-            [name]: value
+            post: {
+            [event.target.name]: event.target.value
+            }
+        })
+    }
+
+    handleOnChangeAuthor = event => {
+        this.setState({
+            [event.target.name]: event.target.value
         })
     }
 
@@ -34,7 +50,7 @@ class PostForm extends Component {
             post: {
                 content: "",
                 author: "",
-                votes: 0
+                likes: 0
             },
             loading: false
         })
@@ -52,7 +68,7 @@ class PostForm extends Component {
                         className="form-control"
                         name="content"
                         value={this.state.content}
-                        onChange={this.handleOnChange}
+                        onChange={this.handleOnChangeContent}
                       />
                     </div>
                   </div>
@@ -65,7 +81,7 @@ class PostForm extends Component {
                         type="text"
                         name="author"
                         value={this.state.author}
-                        onChange={this.handleOnChange}
+                        onChange={this.handleOnChangeAuthor}
                       />
                     </div>
                   </div>

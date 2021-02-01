@@ -40,7 +40,6 @@ class App extends Component {
         <h2>Posts</h2> */}
         {/* {this.handleLoading()} */}
         {/* <PostList /> */} 
-        
             <NavBar/>
             <Switch>
                 <Route exact path='/' component={Home} />
@@ -48,7 +47,6 @@ class App extends Component {
                 <Route path='/posts/:id' render={(routerProps) => <Post {...routerProps} posts={this.props.posts}/>}/>
                 <Route path='/posts' render={(routerProps) => <PostList {...routerProps} posts={this.props.posts}/>}/>
             </Switch>
-        
       </div>
     );
   }
