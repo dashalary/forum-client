@@ -4,6 +4,12 @@ import { connect } from 'react-redux';
 import PostForm from './containers/PostForm'
 import { getPosts } from './actions/posts'
 import PostList from './components/posts/PostList'
+import Modal from 'react-bootstrap/Modal'
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import NavBar from './components/NavBar';
 
 // handleLoading = () => {
 //   if (this.props.loading) {
