@@ -8,13 +8,24 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import NavBar from './components/NavBar';
 
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk))) // to be able to use getState and dispatch
 
 ReactDOM.render(
   <Provider store={store}>
-     <App />
+    <Router>
+     <NavBar />
+        <Route exact path="/" component={Home} />
+          <div>
+            <App />
+          </div>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
