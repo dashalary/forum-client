@@ -28,17 +28,19 @@ class PostForm extends Component {
     //     })
     // }
 
-    handleOnChangeContent = event => {
-        this.setState({
-            post: {
-            [event.target.name]: event.target.value
+    handleOnChangeContent = (event) => {
+        this.setState({...this.state,
+            post: {...this.state.post,
+                content: event.target.value
             }
         })
     }
 
     handleOnChangeAuthor = event => {
-        this.setState({
-            [event.target.name]: event.target.value
+        this.setState({...this.state,
+            post: {...this.state.post,
+            author: event.target.value
+            }
         })
     }
 
