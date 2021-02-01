@@ -12,9 +12,9 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Home from './components/Home';
-import PostList from './components/posts/PostList';
+// import NavBar from './components/NavBar';
+// import Home from './components/Home';
+// import PostList from './components/posts/PostList';
 
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk))) // to be able to use getState and dispatch
@@ -22,12 +22,7 @@ const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-     <NavBar />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/posts" component={PostList} />
-          <div>
-            <App />
-          </div>
+      <App />
     </Router>
   </Provider>,
   document.getElementById('root')
