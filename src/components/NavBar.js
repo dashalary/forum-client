@@ -16,6 +16,7 @@ const link = {
         <NavLink to="/" exact style={link} activeStyle={{background: 'pink'}}>Home</NavLink>
         <NavLink to="/posts" exact style={link} activeStyle={{background: 'pink'}}>Posts</NavLink>
         <NavLink to="/posts/new" exact style={link} activeStyle={{background: 'pink'}}>Make a Post</NavLink>
+       <hr />
       </div>
     );
   };
