@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Post extends Component {
-    render() {
-        const { post } = this.props;
-    
-        return (
-          <div>
-              {post.author} says:
-              <br>
-              </br>
-              {post.content}
-              {/* <button onClick={this.handleOnClick}>Delete</button> */}
-              {/* <ReviewsContainer restaurant={restaurant}/> */}
-          </div>
-        );
-    }
+const Post = ({ post }) => {
+        <div>
+            <div className="card card-inverse card-success card-primary mb-3 text-center">
+                <div className="card-block">
+                    <blockquote className="card-blockquote">
+                    <p>{post.content}</p>
+                        <footer>- author <cite title="Source Title">{post.author}</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
 }
 
 export default Post

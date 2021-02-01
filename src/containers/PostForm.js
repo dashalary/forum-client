@@ -42,6 +42,7 @@ class PostForm extends Component {
 
     render() {
         return (
+            <div>
             <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
                 <div className="form-group">
                     <br></br>
@@ -59,7 +60,7 @@ class PostForm extends Component {
                       <br></br>
                     <label htmlFor="author" className="col-md-4 control-label">Author:</label>
                     <div className="col-md-5">
-                      <input
+                      <textarea
                         className="form-control"
                         type="text"
                         name="author"
@@ -71,10 +72,11 @@ class PostForm extends Component {
                   <div className="form-group">
                     <div className="col-md-6 col-md-offset-4">
                         <br></br>
-                      <button type="submit">Post This</button>
+                      <input type="submit" />
                     </div>
                   </div>
             </form>
+            </div>
         )
     }
 }
