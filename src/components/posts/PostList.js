@@ -7,16 +7,21 @@ class PostList extends Component {
         const { posts } = this.props;
         const postList = posts.map(post => {
             return (
-                <li key={post.id}>
+                <div key={post.id}>
                     <Link to={`/posts/${post.id}`}>{post.content}</Link>
-                </li>
+                    <hr />
+                </div>
             )
         })
         return (
-          <ul>
+                <div className="card card-inverse card-success card-primary mb-3 text-center">
+                <div className="card-block">
+                    <blockquote className="card-blockquote">
               <br></br>
             {postList}
-          </ul>
+            </blockquote>
+            </div>
+            </div>
         );
       }
 }

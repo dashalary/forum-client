@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { addPost } from '../actions/posts';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 
 class PostForm extends Component {
 
@@ -48,13 +49,14 @@ class PostForm extends Component {
         event.preventDefault()
         const post = {...this.state.post}
         this.props.addPost(post)
+        this.props.history.push('/posts');
         this.setState({
             post: {
                 content: "",
                 author: "",
                 likes: 0
             },
-            loading: false
+            loading: false,
         })
     }
 

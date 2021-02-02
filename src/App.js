@@ -45,7 +45,7 @@ class App extends Component {
                 <Route exact path='/' component={Home} />
                 <Route path='/posts/new' component={PostForm}/>
                 <Route path='/posts/:id' render={(routerProps) => <Post {...routerProps} posts={this.props.posts}/>}/>
-                <Route path='/posts' render={(routerProps) => <PostList {...routerProps} posts={this.props.posts}/>}/>
+                <Route exact path='/posts' render={(routerProps) => <PostList {...routerProps} posts={this.props.posts}/>}/>
             </Switch>
       </div>
     );
