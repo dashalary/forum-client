@@ -28,18 +28,6 @@ class App extends Component {
   render() {
     return (
       <div className="container-fluid">
-        {/* <div className="row title justify-content-center" style={{ paddingTop: '12px' }}>
-          {/* <h1>Forum</h1> */}
-        {/* </div>
-        <hr />
-        
-        <h2>Make a Post</h2>
-        <br></br>
-        <PostForm />
-        <hr />
-        <h2>Posts</h2> */}
-        {/* {this.handleLoading()} */}
-        {/* <PostList /> */} 
             <NavBar/>
             <Switch>
                 <Route exact path='/' component={Home} />

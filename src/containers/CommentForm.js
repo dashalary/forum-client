@@ -1,62 +1,25 @@
 import React, { Component } from 'react';
-import { addPost } from '../actions/posts';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
+import { addComment } from '../actions/posts'
 
-
-class PostForm extends Component {
-
+class CommentForm extends Component {
     state = {
-        post: {
-            content: "",
-            author: "",
-            likes: 0
-        },
-        loading: false
+        content: "",
+        author: ""
     }
 
-    // handleOnChange = event => {
-    //     // this.setState({...this.state,
-    //     // post: {...this.state.post,
-    //     //     content: 
-
-    //     // }
-    // // })
-    //     const { value, name } = event.target
-    //     this.setState({
-    //         post: {
-    //         [name]: value
-    //         }
-    //     })
-    // }
-
-    handleOnChangeContent = (event) => {
-        this.setState({...this.state,
-            post: {...this.state.post,
-                content: event.target.value
-            }
-        })
-    }
-
-    handleOnChangeAuthor = event => {
-        this.setState({...this.state,
-            post: {...this.state.post,
-            author: event.target.value
-            }
-        })
-    }
-
-    handleOnSubmit = event => {
-        event.preventDefault()
-        const post = {...this.state.post}
-        this.props.addPost(post)
-        this.props.history.push('/posts');
+    handleOnChange = (event) => {
         this.setState({
-            post: {
-                content: "",
-                author: "",
-                likes: 0
-            },
-            loading: false,
+          [event.target.name]: event.target.value
+        })
+    }
+
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+        this.props.addComment(this.state, this.props.post.id)
+        this.setState({
+          content: "",
+          author: ""
         })
     }
 
@@ -72,7 +35,7 @@ class PostForm extends Component {
                         className="form-control"
                         name="content"
                         value={this.state.content}
-                        onChange={this.handleOnChangeContent}
+                        onChange={this.handleOnChange}
                       />
                     </div>
                   </div>
@@ -85,7 +48,7 @@ class PostForm extends Component {
                         type="text"
                         name="author"
                         value={this.state.author}
-                        onChange={this.handleOnChangeAuthor}
+                        onChange={this.handleOnChange}
                       />
                     </div>
                   </div>
@@ -101,4 +64,4 @@ class PostForm extends Component {
     }
 }
 
-export default connect(null, { addPost })(PostForm);
+export default connect(null, { addComment })(CommentForm)

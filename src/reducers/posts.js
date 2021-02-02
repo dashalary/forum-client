@@ -1,6 +1,4 @@
-const postReducer = (state = {posts: [], loading: false}, action) => {
-    // let index;
-    // let post;
+const postReducer = (state = {posts: [], comments: [], loading: false}, action) => {
 
     switch (action.type) {
         case "LOADING_POSTS":
@@ -25,6 +23,23 @@ const postReducer = (state = {posts: [], loading: false}, action) => {
                 posts: [...state.posts, action.payload],
                 loading: false
             }
+        case 'DELETE_POST':
+            const posts = state.posts.filter(post => post.id !== action.id);
+            return { ...state, posts: posts}
+
+        case 'ADD_COMMENT':
+            let p = state.posts.map(post => {
+                if (post.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return post
+                }
+            })
+            return {...state, posts: p}
+    
+        case 'DELETE_COMMENT':
+            const comments = state.comments.filter(c => c.id !== action.id);
+            return {...state, comments: comments}
 
     default:
         return state;
