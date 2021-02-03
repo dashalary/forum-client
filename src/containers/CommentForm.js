@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { addComment } from '../actions/posts'
 
+
 class CommentForm extends Component {
     state = {
         content: "",
@@ -31,7 +32,7 @@ class CommentForm extends Component {
                 <div className="form-group">
                     <br></br>
                     <label htmlFor="content" className="col-md-4 control-label">Content:</label>
-                    <div className="col-md-5">
+                    <div className="col-md-4">
                       <textarea
                         className="form-control"
                         name="content"
@@ -43,7 +44,7 @@ class CommentForm extends Component {
                   <div className="form-group">
                       <br></br>
                     <label htmlFor="author" className="col-md-4 control-label">Author:</label>
-                    <div className="col-md-5">
+                    <div className="col-md-4">
                       <textarea
                         className="form-control"
                         type="text"
@@ -54,9 +55,9 @@ class CommentForm extends Component {
                     </div>
                   </div>
                   <div className="form-group">
-                    <div className="col-md-6 col-md-offset-4">
+                    <div className="col-md-4 col-md-offset-4">
                         <br></br>
-                      <button type="submit">Add Comment</button>
+                      <button type="submit" color="#841584">Add Comment</button>
                     </div>
                   </div>
             </form>

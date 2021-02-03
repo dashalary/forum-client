@@ -49,7 +49,7 @@ export const addComment = (comment, postId) => {
 
 export const deleteComment = (commentId, postId) => {
     return (dispatch) => {
-      return fetch(`/posts/${postId}/comments/${commentId}`, {
+      fetch(`/posts/${postId}/comments/${commentId}`, {
         method: 'DELETE'
       })
       .then(res => res.json())

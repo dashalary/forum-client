@@ -3,6 +3,11 @@
   align-items: center;
 }
 
+div.form-group {
+  display: flex;
+  justify-content: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -15,7 +20,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #87bbdf;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
