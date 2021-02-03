@@ -41,4 +41,4 @@ class Comments extends Component {
       }
     }
 
-   export default connect(mapStateToProps)(Comments)
+   export default connect(mapStateToProps, {deleteComment})(Comments)

@@ -56,10 +56,15 @@ const postReducer = (state = {posts: [], comments: [], loading: false}, action) 
         //         posts: [...state.posts, action.payload],
         //         loading: false
         //     }
-        
-        case 'DELETE_COMMENT':
-            const comments = state.comments.filter(c => c.id !== action.id);
-            return {...state, comments: comments}
+        case 'DELETE_COMMENT': 
+            let postsDelete = state.posts.map(post => {
+                if (post.id === action.payload.id) {
+                return action.payload
+                } else {
+                return post
+                }
+            })
+            return {...state, posts: postsDelete}
 
     default:
         return state;
