@@ -48,6 +48,7 @@ class EditPost extends React.Component {
         event.preventDefault()
         let post = {...this.state, id: this.props.post.id}
         this.props.editPost(post)
+        // this.props.history.push('/posts')
         this.setState({
             post: {
                 content: "",
