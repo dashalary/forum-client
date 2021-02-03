@@ -14,21 +14,6 @@ class PostForm extends Component {
         loading: false
     }
 
-    // handleOnChange = event => {
-    //     // this.setState({...this.state,
-    //     // post: {...this.state.post,
-    //     //     content: 
-
-    //     // }
-    // // })
-    //     const { value, name } = event.target
-    //     this.setState({
-    //         post: {
-    //         [name]: value
-    //         }
-    //     })
-    // }
-
     handleOnChangeContent = (event) => {
         this.setState({...this.state,
             post: {...this.state.post,

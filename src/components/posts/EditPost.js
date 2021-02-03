@@ -5,8 +5,12 @@ import {editPost} from '../../actions/posts'
 class EditPost extends React.Component {
 
     state = {
-        content: '',
-        author: ''
+        post: {
+            content: "",
+            author: "",
+            likes: 0
+        },
+        loading: false
     }
     
     // handleOnChangeContent = (event) => {
@@ -25,14 +29,18 @@ class EditPost extends React.Component {
     //     })
     // }
     handleOnChangeC = (event) => {
-        this.setState({
-          [event.target.name]: event.target.value
+        this.setState({...this.state,
+            post: {...this.state.post,
+            content: event.target.value
+            }
         })
     }
 
     handleOnChangeA = (event) => {
-        this.setState({
-          [event.target.name]: event.target.value
+        this.setState({...this.state,
+            post: {...this.state.post,
+            author: event.target.value
+            }
         })
     }
     
@@ -46,7 +54,7 @@ class EditPost extends React.Component {
                 author: "",
                 likes: 0
             },
-            loading: false,
+            loading: false
         })
     }
     
