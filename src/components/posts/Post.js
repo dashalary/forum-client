@@ -14,8 +14,8 @@ const Post = (props) => {
                         <footer>by: <cite title="Source Title">{post.author}</cite></footer>
                         <br></br>
                         <hr />
-                        <Link to={`/posts/${post.id}/comments`}>See Comments</Link>
-                        {/* <CommentsContainer post={post}/><br/> */}
+                        {/* <Link to={`/posts/${post.id}/comments`}>See Comments</Link> */}
+                        <CommentsContainer post={post}/><br/>
                     </blockquote>
                 </div>
             </div>
