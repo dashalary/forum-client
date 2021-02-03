@@ -9,6 +9,8 @@ import {Route, Switch} from 'react-router-dom'
 import Post from './components/posts/Post'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
+import Comments from './components/comments/Comments'
+import { withRouter } from 'react-router-dom'
 
 
 // handleLoading = () => {
@@ -34,6 +36,7 @@ class App extends Component {
                 <Route path='/posts/new' component={PostForm}/>
                 <Route path='/posts/:id' render={(routerProps) => <Post {...routerProps} posts={this.props.posts}/>}/>
                 <Route exact path='/posts' render={(routerProps) => <PostList {...routerProps} posts={this.props.posts}/>}/>
+                <Route path='/posts/:id/comments' render={(routerProps) => <Comments {...routerProps} comments={this.props.comments}/>}/>
             </Switch>
       </div>
     );
@@ -44,8 +47,9 @@ const mapStateToProps = state => {
   console.log("I am state", state);
   return {
     posts: state.postReducer.posts,
+    comments: state.postReducer.comments,
     loading: state.postReducer.loading
   }
 }
 
-export default connect(mapStateToProps, { getPosts })(App)
+export default withRouter(connect(mapStateToProps, { getPosts })(App))

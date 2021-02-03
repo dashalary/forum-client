@@ -17,6 +17,7 @@ class CommentForm extends Component {
     handleOnSubmit = (event) => {
         event.preventDefault()
         this.props.addComment(this.state, this.props.post.id)
+        // this.props.history.push("/posts")
         this.setState({
           content: "",
           author: ""
@@ -55,7 +56,7 @@ class CommentForm extends Component {
                   <div className="form-group">
                     <div className="col-md-6 col-md-offset-4">
                         <br></br>
-                      <input type="submit" />
+                      <button type="submit">Add Comment</button>
                     </div>
                   </div>
             </form>

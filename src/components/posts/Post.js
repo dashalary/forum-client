@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentsContainer from '../../containers/CommentsContainer'
+import {Route, Link} from 'react-router-dom'
 
 const Post = (props) => {
     let post = props.posts.filter(p => p.id == props.match.params.id)[0]
@@ -12,7 +13,9 @@ const Post = (props) => {
                     <p>{post.content}</p>
                         <footer>by: <cite title="Source Title">{post.author}</cite></footer>
                         <br></br>
-                        <CommentsContainer post={post}/><br/>
+                        <hr />
+                        <Link to={`/posts/${post.id}/comments`}>See Comments</Link>
+                        {/* <CommentsContainer post={post}/><br/> */}
                     </blockquote>
                 </div>
             </div>

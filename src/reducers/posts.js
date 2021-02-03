@@ -24,7 +24,7 @@ const postReducer = (state = {posts: [], comments: [], loading: false}, action) 
                 loading: false
             }
         case 'DELETE_POST':
-            const posts = state.posts.filter(post => post.id !== action.id);
+            let posts = state.posts.filter(post => post.id !== action.id);
             return { ...state, posts: posts}
 
         case 'ADD_COMMENT':

@@ -25,24 +25,22 @@ export const addPost = post => {
 
 export const addComment = (comment, postId) => {
     return (dispatch) => {
-      fetch(`http://localhost:3000/api/v1/posts/${postId}/comments`, {
+      fetch(`/posts/${postId}/comments`, {
         method: 'POST',
+        body: JSON.stringify(comment),
         headers: {
           'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(comment)
+        }
       })
       .then(res => res.json())
-      .then(post => {
-            dispatch({type: 'ADD_COMMENT', payload: post})
-          }
-      )
+      .then(post => {dispatch({type: 'ADD_COMMENT', payload: post})
+     })
     }
 }
 
 export const deleteComment = (commentId, postId) => {
     return (dispatch) => {
-      return fetch(`http://localhost:3000/api/v1/posts/${postId}/comments/${commentId}`, {
+      return fetch(`/posts/${postId}/comments/${commentId}`, {
         method: 'DELETE'
       })
       .then(res => res.json())
