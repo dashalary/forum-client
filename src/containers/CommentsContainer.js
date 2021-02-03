@@ -7,8 +7,8 @@ class CommentsContainer extends Component {
   render() {
     return (
       <div>
-          <CommentForm post={this.props.post}/><br/>
           <Comments comments={this.props.post && this.props.post.comments} />
+          <CommentForm post={this.props.post}/><br/>
       </div>
     )
   }

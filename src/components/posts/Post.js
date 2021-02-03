@@ -1,9 +1,13 @@
 import React from 'react';
 import CommentsContainer from '../../containers/CommentsContainer'
 import {Route, Link} from 'react-router-dom'
+import { deletePost } from '../../actions/posts'
+import EditPost from './EditPost'
 
 const Post = (props) => {
+
     let post = props.posts.filter(p => p.id == props.match.params.id)[0]
+
     return (
         <div>
             <div className="card card-inverse card-success card-primary mb-3 text-center">
@@ -13,6 +17,9 @@ const Post = (props) => {
                     <p>{post.content}</p>
                         <footer>by: <cite title="Source Title">{post.author}</cite></footer>
                         <br></br>
+                        <hr />
+                        <p>Edit:</p>
+                        <EditPost post={post} />
                         <hr />
                         {/* <Link to={`/posts/${post.id}/comments`}>See Comments</Link> */}
                         <CommentsContainer post={post}/><br/>

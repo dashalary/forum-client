@@ -29,6 +29,8 @@ class Comments extends Component {
            <button onClick={() => this.handleDelete(comment)}>Delete Comment</button>
             </li>
           )}
+          <br></br>
+          <hr />
          </div>
     )
   }

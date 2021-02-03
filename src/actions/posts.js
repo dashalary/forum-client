@@ -32,6 +32,21 @@ export const addPost = post => {
     }
 }
 
+export const editPost = (post) => {
+  return (dispatch) => {
+    fetch(`/posts/${post.id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      method: 'PATCH',
+      body: JSON.stringify(post)
+    })
+    .then(res => res.json())
+    .then(post => dispatch({type: 'EDIT_POST', payload: post}))
+  }
+}
+
 export const addComment = (comment, postId) => {
     return (dispatch) => {
       fetch(`/posts/${postId}/comments`, {

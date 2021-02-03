@@ -24,9 +24,19 @@ const postReducer = (state = {posts: [], comments: [], loading: false}, action) 
                 posts: [...state.posts, action.payload],
                 loading: false
             }
-        case 'DELETE_POST':
-            let posts = state.posts.filter(post => post.id !== action.id);
-            return { ...state, posts: posts}
+        // case 'DELETE_POST':
+        //     let posts = state.posts.filter(post => post.id !== action.id);
+        //     return { ...state, posts: posts}
+
+        case 'EDIT_POST':
+            let postEdit = state.posts.map(post => {
+                if (post.id === action.payload.id) {
+                return action.payload
+                } else {
+                return post
+                }
+            })
+            return {...state, posts: postEdit}
 
         case "FETCH_COMMENTS":
             return {
