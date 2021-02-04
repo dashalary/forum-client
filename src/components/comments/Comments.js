@@ -5,25 +5,27 @@ import { deleteComment } from '../../actions/posts'
 
 class Comments extends Component {
 
+  // let com = props.posts.filter(p => p.id == props.match.params.id)[0]
+
     handleDelete = (comment) => {
       this.props.deleteComment(comment.id, comment.post_id)
     }
-   
-//     // like = (id) => {
-//     //  this.setState({id ? id: id += 1 : id : 1})
-//     // }
-   
+
+    // childComments = () => {
+    //   const { comment, allComments } = this.props
+    //   return allComments.filter(c => c.post_id === comment.id)
+    // }
    render() {
     //  const comment = this.props.comments.select(comment => comment.id === commentId)
     //  const post = comments.post.select(post => post.id === postId)
-    //   {/* <button onClick={() => this.like(c.id)}>Like Comment {this.state[c.id] ? this.state[c.id] : 0}</button><button onClick={() => this.handleDelete(c)}>Delete Comment</button></li> */}
-    
+    // const {comments, post_id} = this.props
+    // let comments = this.props.comments 
+    // comments.select(comment => comment.post_id === )
      return (
          <div>
            <hr />
            <p>Comments:</p>
-           
-          {this.props.comments && this.props.comments.map(comment =>
+          {this.props.comments.map(comment =>
            <li key={comment.id}>{comment.content} - says {comment.author}
            <br></br>
            <button onClick={() => this.handleDelete(comment)}>Delete Comment</button>
@@ -38,7 +40,7 @@ class Comments extends Component {
 
     const mapStateToProps = state => {
       return {
-        comments: state.postReducer.comments,
+        // comments: state.postReducer.comments,
         posts: state.postReducer.posts
       }
     }

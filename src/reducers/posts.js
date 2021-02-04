@@ -1,4 +1,4 @@
-const postReducer = (state = {posts: [], comments: [], loading: false}, action) => {
+const postReducer = (state = {posts: [], loading: false}, action) => {
 
     switch (action.type) {
         case "LOADING_POSTS":

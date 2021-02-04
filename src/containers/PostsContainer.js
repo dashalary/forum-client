@@ -15,7 +15,7 @@ class PostsContainer extends Component {
 
     componentDidMount() {
         this.props.getPosts()
-        this.props.getComments()
+        // this.props.getComments()
     }
     
       render() {
@@ -27,7 +27,8 @@ class PostsContainer extends Component {
                     <Route path='/posts/new' component={PostForm}/>
                     <Route path='/posts/:id' render={(routerProps) => <Post {...routerProps} posts={this.props.posts}/>}/>
                     <Route exact path='/posts' render={(routerProps) => <PostList {...routerProps} posts={this.props.posts}/>}/>
-                    <Route path='/posts/:post_id/comments' render={(routerProps) => <Comments {...routerProps} comments={this.props.comments}/>}/>
+                    <Route path='/posts/:post_id/comments' render={(routerProps) => <Comments {...routerProps} comments={this.props.post.comments}/>}/>
+                    
                 </Switch>
           </div>
         );
@@ -38,9 +39,11 @@ class PostsContainer extends Component {
       console.log("I am state", state);
       return {
         posts: state.postReducer.posts,
-        comments: state.postReducer.comments,
+        // comments: state.postReducer.comments,
         loading: state.postReducer.loading
       }
     }
     
-export default connect(mapStateToProps, { getPosts, getComments })(PostsContainer)
+export default connect(mapStateToProps, { getPosts })(PostsContainer)
+
+// getComments 

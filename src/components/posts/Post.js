@@ -1,7 +1,6 @@
 import React from 'react';
 import CommentsContainer from '../../containers/CommentsContainer'
 import {Route, Link} from 'react-router-dom'
-import { deletePost } from '../../actions/posts'
 import EditPost from './EditPost'
 
 const Post = (props) => {

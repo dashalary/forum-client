@@ -6,7 +6,8 @@ import { addComment } from '../actions/posts'
 class CommentForm extends Component {
     state = {
         content: "",
-        author: ""
+        author: "",
+        likes: 0
     }
 
     handleOnChange = (event) => {
@@ -21,7 +22,8 @@ class CommentForm extends Component {
         // this.props.history.push("/posts")
         this.setState({
           content: "",
-          author: ""
+          author: "",
+          likes: 0
         })
     }
 
