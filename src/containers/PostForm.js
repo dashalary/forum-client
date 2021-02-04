@@ -48,6 +48,7 @@ class PostForm extends Component {
     render() {
         return (
             <div>
+              <br></br>
             <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
                 <div className="form-group">
                     <br></br>
