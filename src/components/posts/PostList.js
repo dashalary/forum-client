@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from './Post'
+// import Post from './Post'
 import {Route, Link} from 'react-router-dom'
 
 class PostList extends Component {

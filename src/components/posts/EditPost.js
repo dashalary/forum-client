@@ -12,22 +12,7 @@ class EditPost extends React.Component {
         },
         loading: false
     }
-    
-    // handleOnChangeContent = (event) => {
-    //     this.setState({...this.state,
-    //         post: {...this.state.post,
-    //             content: event.target.value
-    //         }
-    //     })
-    // }
-
-    // handleOnChangeAuthor = event => {
-    //     this.setState({...this.state,
-    //         post: {...this.state.post,
-    //         author: event.target.value
-    //         }
-    //     })
-    // }
+   
     handleOnChangeC = (event) => {
         this.setState({...this.state,
             post: {...this.state.post,

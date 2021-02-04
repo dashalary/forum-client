@@ -7,14 +7,14 @@ export const getPosts = () => {
     }
 }
 
-export const getComments = () => {
-  return (dispatch) => {
-      dispatch({type: "LOADING_COMMENTS"})
-      fetch ('/comments')
-      .then(res => res.json())
-      .then(comments => dispatch({type: "FETCH_COMMENTS", payload: comments}))
-  }
-}
+// export const getComments = () => {
+//   return (dispatch) => {
+//       dispatch({type: "LOADING_COMMENTS"})
+//       fetch ('/comments')
+//       .then(res => res.json())
+//       .then(comments => dispatch({type: "FETCH_COMMENTS", payload: comments}))
+//   }
+// }
 
 export const addPost = post => {
     return (dispatch) => {

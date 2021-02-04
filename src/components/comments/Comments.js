@@ -2,40 +2,37 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { deleteComment } from '../../actions/posts'
 
-
 class Comments extends Component {
-
-  // let com = props.posts.filter(p => p.id == props.match.params.id)[0]
 
     handleDelete = (comment) => {
       this.props.deleteComment(comment.id, comment.post_id)
     }
 
-    // childComments = () => {
-    //   const { comment, allComments } = this.props
-    //   return allComments.filter(c => c.post_id === comment.id)
-    // }
    render() {
-    //  const comment = this.props.comments.select(comment => comment.id === commentId)
-    //  const post = comments.post.select(post => post.id === postId)
-    // const {comments, post_id} = this.props
-    // let comments = this.props.comments 
-    // comments.select(comment => comment.post_id === )
+     if (this.props.comments === undefined || this.props.comments.length === 0) {
+       return (
+         <p>Be the first one to comment below!</p>
+       )
+     } else {
      return (
          <div>
            <hr />
-           <p>Comments:</p>
+           <p><b>Comments:</b></p>
+           <br></br>
           {this.props.comments.map(comment =>
            <li key={comment.id}>{comment.content} - says {comment.author}
            <br></br>
+           <br></br>
            <button onClick={() => this.handleDelete(comment)}>Delete Comment</button>
+           <br></br>
+           <br></br>
             </li>
           )}
           <br></br>
           <hr />
          </div>
     )
-  }
+  }}
 }
 
     const mapStateToProps = state => {

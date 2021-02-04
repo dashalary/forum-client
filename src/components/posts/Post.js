@@ -2,6 +2,7 @@ import React from 'react';
 import CommentsContainer from '../../containers/CommentsContainer'
 import {Route, Link} from 'react-router-dom'
 import EditPost from './EditPost'
+import LikeButton from '../LikeButton'
 
 const Post = (props) => {
 
@@ -16,8 +17,11 @@ const Post = (props) => {
                     <p>{post.content}</p>
                         <footer>by: <cite title="Source Title">{post.author}</cite></footer>
                         <br></br>
+                        <LikeButton />
                         <hr />
-                        <p>Edit:</p>
+                        <p><b>Edit:</b></p>
+                        <br></br>
+                        {/* <Link to={`/posts/${post.id}`}>Edit Post</Link> */}
                         <EditPost post={post} />
                         <hr />
                         {/* <Link to={`/posts/${post.id}/comments`}>See Comments</Link> */}

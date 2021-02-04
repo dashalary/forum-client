@@ -38,18 +38,18 @@ const postReducer = (state = {posts: [], loading: false}, action) => {
             })
             return {...state, posts: postEdit}
 
-        case "FETCH_COMMENTS":
-            return {
-                ...state,
-                comments: action.payload,
-                loading: false
-            }
+        // case "FETCH_COMMENTS":
+        //     return {
+        //         ...state,
+        //         comments: action.payload,
+        //         loading: false
+        //     }
 
-        case "LOADING_COMMENTS":
-            return {
-                ...state,
-                loading: true
-            }
+        // case "LOADING_COMMENTS":
+        //     return {
+        //         ...state,
+        //         loading: true
+        //     }
         case 'ADD_COMMENT':
             let p = state.posts.map(post => {
                 if (post.id === action.payload.id) {
@@ -75,6 +75,25 @@ const postReducer = (state = {posts: [], loading: false}, action) => {
                 }
             })
             return {...state, posts: postsDelete}
+
+        case 'LIKE_POST':
+            // let likes = state.posts.map(post => {
+            //     if (post.id === action.payload.id) {
+            //         return 
+            //     } else {
+            //         return post
+            //     }
+            // })
+            // return {...state, posts: likes}
+            let likes = state.posts.map(post => {
+                if (post.id === action.payload.id) {
+                    return {...post, likes: post.likes += 1}
+                } else {
+                        return post
+                    
+                }
+            })
+            return {...state, posts: likes}
 
     default:
         return state;
