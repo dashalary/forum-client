@@ -77,23 +77,16 @@ const postReducer = (state = {posts: [], loading: false}, action) => {
             return {...state, posts: postsDelete}
 
         case 'LIKE_POST':
-            // let likes = state.posts.map(post => {
-            //     if (post.id === action.payload.id) {
-            //         return 
-            //     } else {
-            //         return post
-            //     }
-            // })
-            // return {...state, posts: likes}
-            let likes = state.posts.map(post => {
+           
+            let newPosts = state.posts.map(post => {
                 if (post.id === action.payload.id) {
-                    return {...post, likes: post.likes += 1}
+                    const counter = post.likes += 1
+                    return {...post, likes: counter}
                 } else {
-                        return post
-                    
+                    return post
                 }
             })
-            return {...state, posts: likes}
+            return {...state, posts: newPosts}
 
     default:
         return state;

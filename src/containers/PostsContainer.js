@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PostForm from './PostForm'
 import { getPosts } from '../actions/posts'
-import { getComments } from '../actions/posts'
+// import { getComments } from '../actions/posts'
 import PostList from '../components/posts/PostList'
 import {Route, Switch} from 'react-router-dom'
 import Post from '../components/posts/Post'
@@ -39,7 +39,6 @@ class PostsContainer extends Component {
       console.log("I am state", state);
       return {
         posts: state.postReducer.posts,
-        // comments: state.postReducer.comments,
         loading: state.postReducer.loading
       }
     }

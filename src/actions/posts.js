@@ -7,14 +7,6 @@ export const getPosts = () => {
     }
 }
 
-// export const getComments = () => {
-//   return (dispatch) => {
-//       dispatch({type: "LOADING_COMMENTS"})
-//       fetch ('/comments')
-//       .then(res => res.json())
-//       .then(comments => dispatch({type: "FETCH_COMMENTS", payload: comments}))
-//   }
-// }
 
 export const addPost = post => {
     return (dispatch) => {
@@ -44,6 +36,21 @@ export const editPost = (post) => {
     })
     .then(res => res.json())
     .then(post => dispatch({type: 'EDIT_POST', payload: post}))
+  }
+}
+
+export const likePost = (post) => {
+  return (dispatch) => {
+    fetch(`/posts/${post.id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        // 'Accept': 'application/json'
+      },
+      method: 'PATCH',
+      body: JSON.stringify(post)
+    })
+    .then(res => res.json())
+    .then(post => dispatch({type: 'LIKE_POST', payload: post}))
   }
 }
 

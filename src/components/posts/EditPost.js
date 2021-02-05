@@ -84,10 +84,6 @@ class EditPost extends React.Component {
         )
     }
 }
-    
-// EditPost.defaultProps = {
-//     posts: {}
-// }
 
 export default connect(null, { editPost })(EditPost)
     
