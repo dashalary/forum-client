@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { addComment } from '../actions/posts'
-
+import { Button, Form, Header } from 'semantic-ui-react'
 
 class CommentForm extends Component {
     state = {
@@ -28,43 +28,34 @@ class CommentForm extends Component {
     }
 
     render() {
+      const size = "small"
         return (
             <div>
+            <Form size={size} onSubmit={this.handleOnSubmit}>
+            <Form.Field>
             <br></br>
-            <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
-                <div className="form-group">
-                    <br></br>
-                    <label htmlFor="content" className="col-md-4 control-label">Content:</label>
-                    <div className="col-md-4">
+            <Header as="h3" htmlFor="content">Content:</Header>
+            <br></br>
                       <textarea
-                        className="form-control"
                         name="content"
                         value={this.state.content}
                         onChange={this.handleOnChange}
                       />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                      <br></br>
-                    <label htmlFor="author" className="col-md-4 control-label">Author:</label>
-                    <div className="col-md-4">
+            </Form.Field>
+            <br></br>
+            <Form.Field>
+            <Header as="h3" htmlFor="author">Author:</Header>
+            <br></br>
                       <textarea
-                        className="form-control"
-                        type="text"
                         name="author"
                         value={this.state.author}
                         onChange={this.handleOnChange}
                       />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <div className="col-md-4 col-md-offset-4">
-                        <br></br>
-                      <button type="submit" color="#841584">Add Comment</button>
-                    </div>
-                  </div>
-            </form>
-            </div>
+            </Form.Field>
+            <br></br>
+            <Button type="submit" color="pink">Add Comment</Button>
+            </Form>
+          </div>
         )
     }
 }

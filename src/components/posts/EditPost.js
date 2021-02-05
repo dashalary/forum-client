@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {editPost} from '../../actions/posts'
 import BackButton from '../BackButton'
+import { Button, Form, Label } from 'semantic-ui-react'
 
 class EditPost extends React.Component {
 
@@ -47,28 +48,29 @@ class EditPost extends React.Component {
             loading: false
         })
     }
-    
+
     render() {
+      const size = "small"
+
         return (
             <div>
-            <form className="form-horizontal" onSubmit={this.handleSubmit}>
-                <div className="form-group">
+            <Form size={size} onSubmit={this.handleSubmit}>
+              <Form.Field>
                     <br></br>
                     <br></br>
-                    <label htmlFor="content" className="col-md-4 control-label">Content:</label>
-                    <div className="col-md-4">
+                    <label htmlFor="content" >Content:</label>
+                    <br></br>
                       <textarea
                         className="form-control"
                         name="content"
                         value={this.state.content}
                         onChange={this.handleOnChangeC}
                       />
-                    </div>
-                </div>
-                  <div className="form-group">
+                      </Form.Field>
                       <br></br>
-                    <label htmlFor="author" className="col-md-4 control-label">Author:</label>
-                    <div className="col-md-4">
+                      <Form.Field>
+                    <label htmlFor="author">Author:</label>
+                    <br></br>
                       <textarea
                         className="form-control"
                         type="text"
@@ -76,18 +78,13 @@ class EditPost extends React.Component {
                         value={this.state.author}
                         onChange={this.handleOnChangeA}
                       />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <div className="col-md-4 col-md-offset-4">
-                        <br></br>
-                      <button type="submit">Edit Post</button>
+                    </Form.Field>
+                    <br></br>
+                      <Button color="pink" type="submit">Edit Post</Button>
                       <br></br>
                       <br></br>
                       <BackButton handleOnClick={(e) => this.handleGoBack(e)} />
-                    </div>
-                  </div>
-            </form>
+            </Form>
             </div>
         )
     }

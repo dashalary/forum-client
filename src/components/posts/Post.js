@@ -5,6 +5,7 @@ import EditPost from './EditPost'
 import LikeButton from '../LikeButton'
 import {connect} from 'react-redux'
 import {likePost} from '../../actions/posts'
+import { Card } from 'semantic-ui-react'
 
 class Post extends Component {
     
@@ -30,9 +31,8 @@ class Post extends Component {
                         <br></br>
                         <br></br>
                         <Link to={`/posts/${post.id}/edit`}>Edit Post</Link>
-                        {/* <EditPost post={post} /> */}
-                        <hr />
-                        {/* <Link to={`/posts/${post.id}/comments`}>See Comments</Link> */}
+                        <br></br>
+                        <br></br>
                         <CommentsContainer post={post}/><br/>
                     </blockquote>
                 </div>

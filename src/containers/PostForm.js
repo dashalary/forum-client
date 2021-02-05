@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { addPost } from '../actions/posts';
 import { connect } from 'react-redux';
-
+import { Button, Form, Header } from 'semantic-ui-react'
 
 class PostForm extends Component {
 
@@ -49,23 +49,22 @@ class PostForm extends Component {
         return (
             <div>
               <br></br>
-            <form className="form-horizontal" onSubmit={this.handleOnSubmit}>
-                <div className="form-group">
-                    <br></br>
-                    <label htmlFor="content" className="col-md-4 control-label">Content:</label>
-                    <div className="col-md-5">
+            <Form size="small" onSubmit={this.handleOnSubmit}>
+            <Form.Field>
+            <br></br>
+            <Header as="h3" htmlFor="content">Content:</Header>
+            <br></br>
                       <textarea
                         className="form-control"
                         name="content"
                         value={this.state.content}
                         onChange={this.handleOnChangeContent}
                       />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                      <br></br>
-                    <label htmlFor="author" className="col-md-4 control-label">Author:</label>
-                    <div className="col-md-5">
+            </Form.Field>
+            <br></br>
+            <Form.Field>
+            <Header as="h3" htmlFor="author">Author:</Header>
+            <br></br>
                       <textarea
                         className="form-control"
                         type="text"
@@ -73,15 +72,10 @@ class PostForm extends Component {
                         value={this.state.author}
                         onChange={this.handleOnChangeAuthor}
                       />
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <div className="col-md-6 col-md-offset-4">
-                        <br></br>
-                      <input type="submit" />
-                    </div>
-                  </div>
-            </form>
+            </Form.Field>
+            <br></br>
+            <Button type="submit" color="pink">Add Post</Button>
+            </Form>
             </div>
         )
     }

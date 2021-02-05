@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import {Button} from 'semantic-ui-react'
 
 const BackButton = (props) => {
 
     return (
-        <button onClick={props.handleOnClick}>
+        <Button color="blue" onClick={props.handleOnClick}>
         Go Back
-        </button>
+        </Button>
     )
 }
 

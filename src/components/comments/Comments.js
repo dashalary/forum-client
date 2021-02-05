@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { deleteComment } from '../../actions/posts'
-import DeleteButton from '../DeleteButton'
+import {Button} from 'semantic-ui-react'
 
 class Comments extends Component {
 
@@ -18,13 +18,13 @@ class Comments extends Component {
      return (
          <div>
            <hr />
-           <p><b>Comments:</b></p>
+           <h3><b>Comments:</b></h3>
            <br></br>
           {this.props.comments.map(comment =>
            <li key={comment.id}>{comment.content} - says {comment.author}
            <br></br>
            <br></br>
-           <button onClick={() => this.handleDelete(comment)}>Delete Comment</button>
+           <Button color="pink" onClick={() => this.handleDelete(comment)}>Delete Comment</Button>
            <br></br>
            <br></br>
             </li>
