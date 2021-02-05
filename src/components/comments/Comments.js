@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { deleteComment } from '../../actions/posts'
+import DeleteButton from '../DeleteButton'
 
 class Comments extends Component {
 
@@ -37,7 +38,6 @@ class Comments extends Component {
 
     const mapStateToProps = state => {
       return {
-        // comments: state.postReducer.comments,
         posts: state.postReducer.posts
       }
     }

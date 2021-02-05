@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {editPost} from '../../actions/posts'
+import BackButton from '../BackButton'
 
 class EditPost extends React.Component {
 
@@ -11,6 +12,10 @@ class EditPost extends React.Component {
             likes: 0
         },
         loading: false
+    }
+
+    handleGoBack = (e) => {
+      this.props.history.goBack()
     }
    
     handleOnChangeC = (event) => {
@@ -31,9 +36,8 @@ class EditPost extends React.Component {
     
     handleSubmit = (event) => {
         event.preventDefault()
-        let post = {...this.state, id: this.props.post.id}
+        let post = {...this.state.post, id: this.props.match.params.id}
         this.props.editPost(post)
-        // this.props.history.push('/posts')
         this.setState({
             post: {
                 content: "",
@@ -49,6 +53,7 @@ class EditPost extends React.Component {
             <div>
             <form className="form-horizontal" onSubmit={this.handleSubmit}>
                 <div className="form-group">
+                    <br></br>
                     <br></br>
                     <label htmlFor="content" className="col-md-4 control-label">Content:</label>
                     <div className="col-md-4">
@@ -76,7 +81,10 @@ class EditPost extends React.Component {
                   <div className="form-group">
                     <div className="col-md-4 col-md-offset-4">
                         <br></br>
-                      <button type="submit" color="#841584">Edit Post</button>
+                      <button type="submit">Edit Post</button>
+                      <br></br>
+                      <br></br>
+                      <BackButton handleOnClick={(e) => this.handleGoBack(e)} />
                     </div>
                   </div>
             </form>

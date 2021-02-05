@@ -9,13 +9,13 @@ import Post from '../components/posts/Post'
 import NavBar from '../components/NavBar'
 import Home from '../components/Home'
 import Comments from '../components/comments/Comments'
+import EditPost from '../components/posts/EditPost'
 import { withRouter } from 'react-router-dom'
 
 class PostsContainer extends Component {
 
     componentDidMount() {
         this.props.getPosts()
-        // this.props.getComments()
     }
     
       render() {
@@ -25,6 +25,8 @@ class PostsContainer extends Component {
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route path='/posts/new' component={PostForm}/>
+                    <Route path='/posts/:id/edit' render={(routerProps) => <EditPost {...routerProps}  />}/>
+                    
                     <Route path='/posts/:id' render={(routerProps) => <Post {...routerProps} posts={this.props.posts}/>}/>
                     <Route exact path='/posts' render={(routerProps) => <PostList {...routerProps} posts={this.props.posts}/>}/>
                     <Route path='/posts/:post_id/comments' render={(routerProps) => <Comments {...routerProps} comments={this.props.post.comments}/>}/>

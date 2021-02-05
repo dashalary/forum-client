@@ -27,11 +27,10 @@ class Post extends Component {
                         <footer>by: <cite title="Source Title">{post.author}</cite></footer>
                         <br></br>
                         <LikeButton post={post} handleOnClick={(e) => this.handleClick(e)} />
-                        <hr />
-                        <p><b>Edit:</b></p>
                         <br></br>
-                        {/* <Link to={`/posts/${post.id}`}>Edit Post</Link> */}
-                        <EditPost post={post} />
+                        <br></br>
+                        <Link to={`/posts/${post.id}/edit`}>Edit Post</Link>
+                        {/* <EditPost post={post} /> */}
                         <hr />
                         {/* <Link to={`/posts/${post.id}/comments`}>See Comments</Link> */}
                         <CommentsContainer post={post}/><br/>

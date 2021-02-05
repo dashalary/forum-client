@@ -1,10 +1,11 @@
 import React from 'react';
+import { Wave } from 'react-animated-text';
 
 const Home = () => {
   return (
     <div>
         <br></br>
-      <h2>Welcome to Forum</h2>
+      <h2><Wave text="Welcome to Forum" /></h2>
     </div>
   );
 };

@@ -11,7 +11,6 @@ class CommentsContainer extends Component {
     return (
       <div>
         <Comments comments={this.props.post.comments} />
-          {/* <Comments comments={this.props.post && this.props.post.comments} /> */}
           <CommentForm post={this.props.post}/><br/>
       </div>
     )
@@ -20,7 +19,6 @@ class CommentsContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    // comments: state.postReducer.comments,
     posts: state.postReducer.posts
   }
 }

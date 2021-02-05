@@ -18,6 +18,7 @@ import {
 
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk))) // to be able to use getState and dispatch
+// const BrowserHistory = require('react-router/lib/BrowserHistory').default;
 
 ReactDOM.render(
   <Provider store={store}>
