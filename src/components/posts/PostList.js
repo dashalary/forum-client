@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import CardDeck from 'react-bootstrap/CardDeck'
-import Card from 'react-bootstrap/Card'
-// import Post from './Post'
+// import CardDeck from 'react-bootstrap/CardDeck'
+// import Card from 'react-bootstrap/Card'
 import {Route, Link} from 'react-router-dom'
 
 class PostList extends Component {
