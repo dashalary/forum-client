@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { addPost } from '../actions/posts';
 import { connect } from 'react-redux';
-import { Button, Form, Header } from 'semantic-ui-react'
+import { Button, Form, Header, Input, TextArea } from 'semantic-ui-react'
 
 class PostForm extends Component {
 
@@ -33,6 +33,9 @@ class PostForm extends Component {
     handleOnSubmit = event => {
         event.preventDefault()
         const post = {...this.state.post}
+        if (post.content === '' || post.author === '') {
+          alert('Please fill in both author and content fields before hitting submit.')
+      } else {
         this.props.addPost(post)
         this.props.history.push('/posts');
         this.setState({
@@ -43,30 +46,36 @@ class PostForm extends Component {
             },
             loading: false,
         })
+      }
     }
 
     render() {
         return (
             <div>
-              <br></br>
+               <div className="card card-inverse card-success card-primary mb-3 text-center">
+                <div className="card-block">
+                    <blockquote className="card-blockquote">
+              {/* id='form-input-control-content' control={Input} error={{content: 'Content field cannot be blank.', pointing: 'below'}} */}
             <Form size="small" onSubmit={this.handleOnSubmit}>
-            <Form.Field>
+            <Form.Field >
             <br></br>
-            <Header as="h3" htmlFor="content">Content:</Header>
+            <Header as="h3" htmlFor="content">Content: </Header>
             <br></br>
-                      <textarea
-                        className="form-control"
+                      <TextArea
+                        placeholder="Your thoughts here"
+                        cols="6"
                         name="content"
                         value={this.state.content}
                         onChange={this.handleOnChangeContent}
                       />
             </Form.Field>
             <br></br>
-            <Form.Field>
-            <Header as="h3" htmlFor="author">Author:</Header>
+            <Form.Field required>
+            <Header as="h3" htmlFor="author">Author: </Header>
             <br></br>
-                      <textarea
-                        className="form-control"
+                      <TextArea
+                        placeholder="Your name here"
+                        cols="6"
                         type="text"
                         name="author"
                         value={this.state.author}
@@ -75,7 +84,11 @@ class PostForm extends Component {
             </Form.Field>
             <br></br>
             <Button type="submit" color="pink">Add Post</Button>
+            {/* </Form.Group> */}
             </Form>
+            </blockquote>
+            </div>
+            </div>
             </div>
         )
     }

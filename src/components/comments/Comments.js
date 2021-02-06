@@ -12,7 +12,11 @@ class Comments extends Component {
    render() {
      if (this.props.comments === undefined || this.props.comments.length === 0) {
        return (
-         <p>Be the first one to comment below!</p>
+         <div>
+           <hr />
+           <br></br>
+         Be the first to comment below!
+         </div>
        )
      } else {
      return (

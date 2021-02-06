@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {editPost} from '../../actions/posts'
 import BackButton from '../BackButton'
-import { Button, Form, Label } from 'semantic-ui-react'
+import { Button, Form, Label, Header } from 'semantic-ui-react'
 
 class EditPost extends React.Component {
 
@@ -38,15 +38,19 @@ class EditPost extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         let post = {...this.state.post, id: this.props.match.params.id}
-        this.props.editPost(post)
-        this.setState({
-            post: {
-                content: "",
-                author: "",
-                likes: 0
-            },
-            loading: false
-        })
+        if (post.content === '' || post.author === '') {
+          alert('Please fill in both author and content fields before hitting submit.')
+        } else {
+          this.props.editPost(post)
+          this.setState({
+              post: {
+                  content: "",
+                  author: "",
+                  likes: 0
+              },
+              loading: false
+          })
+        }
     }
 
     render() {
@@ -58,9 +62,11 @@ class EditPost extends React.Component {
               <Form.Field>
                     <br></br>
                     <br></br>
-                    <label htmlFor="content" >Content:</label>
+                    <Header as="h3" htmlFor="content" >Content:</Header>
                     <br></br>
                       <textarea
+                        cols="6"
+                        placeholder="Your thoughts here"
                         className="form-control"
                         name="content"
                         value={this.state.content}
@@ -69,9 +75,11 @@ class EditPost extends React.Component {
                       </Form.Field>
                       <br></br>
                       <Form.Field>
-                    <label htmlFor="author">Author:</label>
+                    <Header as="h3" htmlFor="author">Author:</Header>
                     <br></br>
                       <textarea
+                        cols="6"
+                        placeholder="Your name here"
                         className="form-control"
                         type="text"
                         name="author"

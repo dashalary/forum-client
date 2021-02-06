@@ -18,13 +18,16 @@ class CommentForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault()
+        if (this.state.content === '' || this.state.author === '') {
+          alert('Please fill in both author and content fields before hitting submit.')
+      } else {
         this.props.addComment(this.state, this.props.post.id)
-        // this.props.history.push("/posts")
         this.setState({
           content: "",
           author: "",
           likes: 0
         })
+      }
     }
 
     render() {
@@ -37,6 +40,8 @@ class CommentForm extends Component {
             <Header as="h3" htmlFor="content">Content:</Header>
             <br></br>
                       <textarea
+                        cols="6"
+                        placeholder="Your thoughts here"
                         name="content"
                         value={this.state.content}
                         onChange={this.handleOnChange}
@@ -47,6 +52,8 @@ class CommentForm extends Component {
             <Header as="h3" htmlFor="author">Author:</Header>
             <br></br>
                       <textarea
+                        placeholder="Your name here"
+                        cols="6"
                         name="author"
                         value={this.state.author}
                         onChange={this.handleOnChange}
