@@ -8,6 +8,11 @@ div.form-group {
   justify-content: center;
 }
 
+/* .ui.color5.button {
+  background-color: #1eb2bd;
+  color: #fff;
+} */
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

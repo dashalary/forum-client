@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Icon, Label } from 'semantic-ui-react'
 
 const LikeButton = (props) => {
@@ -19,5 +19,3 @@ const LikeButton = (props) => {
 }
 
 export default LikeButton
-
-{/* <button onClick={props.handleOnClick}>Likes: {props.post.likes}</button> */}

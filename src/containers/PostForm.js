@@ -52,43 +52,40 @@ class PostForm extends Component {
     render() {
         return (
             <div>
-               <div className="card card-inverse card-success card-primary mb-3 text-center">
-                <div className="card-block">
-                    <blockquote className="card-blockquote">
-              {/* id='form-input-control-content' control={Input} error={{content: 'Content field cannot be blank.', pointing: 'below'}} */}
-            <Form size="small" onSubmit={this.handleOnSubmit}>
-            <Form.Field >
-            <br></br>
-            <Header as="h3" htmlFor="content">Content: </Header>
-            <br></br>
-                      <TextArea
-                        placeholder="Your thoughts here"
-                        cols="6"
-                        name="content"
-                        value={this.state.content}
-                        onChange={this.handleOnChangeContent}
-                      />
-            </Form.Field>
-            <br></br>
-            <Form.Field required>
-            <Header as="h3" htmlFor="author">Author: </Header>
-            <br></br>
-                      <TextArea
-                        placeholder="Your name here"
-                        cols="6"
-                        type="text"
-                        name="author"
-                        value={this.state.author}
-                        onChange={this.handleOnChangeAuthor}
-                      />
-            </Form.Field>
-            <br></br>
-            <Button type="submit" color="pink">Add Post</Button>
-            {/* </Form.Group> */}
-            </Form>
-            </blockquote>
-            </div>
-            </div>
+                <div className="card card-inverse card-success card-primary mb-3 text-center">
+                    <div className="card-block">
+                        <blockquote className="card-blockquote">
+                        <Form size="small" onSubmit={this.handleOnSubmit}>
+                            <Form.Field style={{fontSize: '15px'}}>
+                            <br></br>
+                            <Header as="h3" htmlFor="content">What do you think?</Header>
+                            <br></br>
+                                <TextArea
+                                    placeholder="Your thoughts here"
+                                    cols="6"
+                                    name="content"
+                                    value={this.state.content}
+                                    onChange={this.handleOnChangeContent}
+                                />
+                            </Form.Field>
+                            <br></br>
+                            <Form.Field style={{fontSize: '15px'}}>
+                            <br></br>
+                                <TextArea
+                                placeholder="Your name here"
+                                cols="6"
+                                type="text"
+                                name="author"
+                                value={this.state.author}
+                                onChange={this.handleOnChangeAuthor}
+                                />
+                            </Form.Field>
+                            <br></br>
+                            <Button type="submit" color="blue" style={{fontSize: '15px'}}>Add Post</Button>
+                        </Form>
+                        </blockquote>
+                    </div>
+                </div>
             </div>
         )
     }

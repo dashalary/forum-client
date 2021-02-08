@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import CommentsContainer from '../../containers/CommentsContainer'
-import {Route, Link} from 'react-router-dom'
-import EditPost from './EditPost'
+import {Link} from 'react-router-dom'
 import LikeButton from '../LikeButton'
 import {connect} from 'react-redux'
 import {likePost} from '../../actions/posts'
-import { Card } from 'semantic-ui-react'
+import {Button} from 'semantic-ui-react'
 
 class Post extends Component {
     
@@ -23,17 +22,20 @@ class Post extends Component {
             <div className="card card-inverse card-success card-primary mb-3 text-center">
                 <div className="card-block">
                     <blockquote className="card-blockquote">
-                        <br></br>
-                    <p>{post.content}</p>
-                        <footer>by: <cite title="Source Title">{post.author}</cite></footer>
-                        <br></br>
-                        <LikeButton post={post} handleOnClick={(e) => this.handleClick(e)} />
-                        <br></br>
-                        <br></br>
-                        <Link to={`/posts/${post.id}/edit`}>Edit Post</Link>
-                        <br></br>
-                        <br></br>
-                        <CommentsContainer post={post}/><br/>
+                    <br></br>
+                    <p style={{fontSize: '18px'}}>{post.content}</p>
+                    <br></br>
+                    <footer style={{fontSize: '17px'}}>by: <cite title="Source Title">{post.author}</cite></footer>
+                    <br></br>
+                    <br></br>
+                    <LikeButton post={post} handleOnClick={(e) => this.handleClick(e)} />
+                    <br></br> 
+                    <br></br>
+                    <Link to={`/posts/${post.id}/edit`} style={{fontSize: '16px'}}><Button color="blue" size="medium" style={{fontSize: '15px'}}>Edit Post</Button></Link>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <CommentsContainer post={post}/><br/>
                     </blockquote>
                 </div>
             </div>

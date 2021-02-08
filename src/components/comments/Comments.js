@@ -7,6 +7,7 @@ class Comments extends Component {
 
     handleDelete = (comment) => {
       this.props.deleteComment(comment.id, comment.post_id)
+      alert("Comment has been deleted.")
     }
 
    render() {
@@ -22,13 +23,14 @@ class Comments extends Component {
      return (
          <div>
            <hr />
-           <h3><b>Comments:</b></h3>
+           <br></br>
+           <p style={{fontSize: '16px'}}><b>Comments:</b></p>
            <br></br>
           {this.props.comments.map(comment =>
-           <li key={comment.id}>{comment.content} - says {comment.author}
+           <li key={comment.id} style={{fontSize: '16px'}}>{comment.content}  -  says {comment.author}
            <br></br>
            <br></br>
-           <Button color="pink" onClick={() => this.handleDelete(comment)}>Delete Comment</Button>
+           <Button basic color="red" onClick={() => this.handleDelete(comment)} style={{fontSize: '14px'}}>Delete Comment</Button>
            <br></br>
            <br></br>
             </li>

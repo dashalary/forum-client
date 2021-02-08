@@ -28,7 +28,6 @@ class PostsContainer extends Component {
                     <Route path='/posts/:id' render={(routerProps) => <Post {...routerProps} posts={this.props.posts}/>}/>
                     <Route exact path='/posts' render={(routerProps) => <PostList {...routerProps} posts={this.props.posts}/>}/>
                     <Route path='/posts/:post_id/comments' render={(routerProps) => <Comments {...routerProps} comments={this.props.post.comments}/>}/>
-                    
                 </Switch>
           </div>
         );

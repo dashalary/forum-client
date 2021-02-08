@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {editPost} from '../../actions/posts'
 import BackButton from '../BackButton'
-import { Button, Form, Label, Header } from 'semantic-ui-react'
+import { Button, Form, Header } from 'semantic-ui-react'
 
 class EditPost extends React.Component {
 
@@ -42,6 +42,8 @@ class EditPost extends React.Component {
           alert('Please fill in both author and content fields before hitting submit.')
         } else {
           this.props.editPost(post)
+          alert('Success! You have edited the post.')
+          this.props.history.push('/posts');
           this.setState({
               post: {
                   content: "",
@@ -55,46 +57,46 @@ class EditPost extends React.Component {
 
     render() {
       const size = "small"
-
         return (
             <div>
-            <Form size={size} onSubmit={this.handleSubmit}>
-              <Form.Field>
-                    <br></br>
-                    <br></br>
-                    <Header as="h3" htmlFor="content" >Content:</Header>
-                    <br></br>
+               <div className="card card-inverse card-success card-primary mb-3 text-center">
+                <div className="card-block">
+                  <blockquote className="card-blockquote">
+                    <Form size={size} onSubmit={this.handleSubmit}>
+                      <Form.Field style={{fontSize: '15px'}}>
+                      <br></br>
+                      <Header as="h3" htmlFor="content" >What do you think?</Header>
+                      <br></br>
                       <textarea
                         cols="6"
                         placeholder="Your thoughts here"
-                        className="form-control"
                         name="content"
                         value={this.state.content}
                         onChange={this.handleOnChangeC}
                       />
                       </Form.Field>
                       <br></br>
-                      <Form.Field>
-                    <Header as="h3" htmlFor="author">Author:</Header>
-                    <br></br>
+                      <Form.Field style={{fontSize: '15px'}}>
+                      <br></br>
                       <textarea
-                        cols="6"
-                        placeholder="Your name here"
-                        className="form-control"
-                        type="text"
-                        name="author"
-                        value={this.state.author}
-                        onChange={this.handleOnChangeA}
+                      cols="6"
+                      placeholder="Your name here"
+                      name="author"
+                      value={this.state.author}
+                      onChange={this.handleOnChangeA}
                       />
-                    </Form.Field>
-                    <br></br>
+                      </Form.Field>
+                      <br></br>
                       <Button color="pink" type="submit">Edit Post</Button>
                       <br></br>
                       <br></br>
-                      <BackButton handleOnClick={(e) => this.handleGoBack(e)} />
-            </Form>
+                    </Form>
+                    <BackButton handleOnClick={(e) => this.handleGoBack(e)} />
+                  </blockquote>
+                </div>
+              </div>
             </div>
-        )
+        ) 
     }
 }
 

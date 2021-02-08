@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { addComment } from '../actions/posts'
-import { Button, Form, Header } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 
 class CommentForm extends Component {
     state = {
@@ -22,6 +22,7 @@ class CommentForm extends Component {
           alert('Please fill in both author and content fields before hitting submit.')
       } else {
         this.props.addComment(this.state, this.props.post.id)
+        alert('Your comment has been added!')
         this.setState({
           content: "",
           author: "",
@@ -35,32 +36,31 @@ class CommentForm extends Component {
         return (
             <div>
             <Form size={size} onSubmit={this.handleOnSubmit}>
-            <Form.Field>
-            <br></br>
-            <Header as="h3" htmlFor="content">Content:</Header>
-            <br></br>
-                      <textarea
-                        cols="6"
-                        placeholder="Your thoughts here"
-                        name="content"
-                        value={this.state.content}
-                        onChange={this.handleOnChange}
-                      />
-            </Form.Field>
-            <br></br>
-            <Form.Field>
-            <Header as="h3" htmlFor="author">Author:</Header>
-            <br></br>
-                      <textarea
-                        placeholder="Your name here"
-                        cols="6"
-                        name="author"
-                        value={this.state.author}
-                        onChange={this.handleOnChange}
-                      />
-            </Form.Field>
-            <br></br>
-            <Button type="submit" color="pink">Add Comment</Button>
+              <Form.Field style={{fontSize: '15px'}}>
+              <br></br>
+              <p style={{fontSize: '16px'}}><b>What do you think?</b></p>
+              <br></br>
+              <textarea
+                cols="6"
+                placeholder="Your thoughts here"
+                name="content"
+                value={this.state.content}
+                onChange={this.handleOnChange}
+              />
+              </Form.Field>
+              <br></br>
+              <Form.Field style={{fontSize: '15px'}}>
+              <br></br>
+              <textarea
+                placeholder="Your name here"
+                cols="6"
+                name="author"
+                value={this.state.author}
+                onChange={this.handleOnChange}
+              />
+              </Form.Field>
+              <br></br>
+              <Button type="submit" color="blue" style={{fontSize: '15px'}}>Add Comment</Button>
             </Form>
           </div>
         )

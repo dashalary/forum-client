@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card } from 'semantic-ui-react'
+import { Card, Segment } from 'semantic-ui-react'
 import {Route, Link} from 'react-router-dom'
 
 class PostList extends Component {
@@ -8,9 +8,9 @@ class PostList extends Component {
         const postList = posts.map(post => {
             return (
                 <div key={post.id}>
-                    <Card>
+                    <Card centered>
                     <br></br>
-                    <Link to={`/posts/${post.id}`}>{post.content}</Link>
+                    <Link to={`/posts/${post.id}`} style={{fontSize: '15px'}}>{post.content}</Link>
                     <br></br>
                     </Card>
                    <br></br>
