@@ -43,8 +43,7 @@ export const likePost = (post) => {
   return (dispatch) => {
     fetch(`/posts/${post.id}`, {
       headers: {
-        'Content-Type': 'application/json',
-        // 'Accept': 'application/json'
+        'Content-Type': 'application/json'
       },
       method: 'PATCH',
       body: JSON.stringify(post)

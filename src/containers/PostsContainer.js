@@ -43,5 +43,3 @@ class PostsContainer extends Component {
     }
     
 export default connect(mapStateToProps, { getPosts })(PostsContainer)
-
-// getComments 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { addPost } from '../actions/posts';
 import { connect } from 'react-redux';
-import { Button, Form, Header, Input, TextArea } from 'semantic-ui-react'
+import { Button, Form, Header, TextArea } from 'semantic-ui-react'
 
 class PostForm extends Component {
 

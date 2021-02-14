@@ -49,14 +49,14 @@ const postReducer = (state = {posts: [], loading: false}, action) => {
             return {...state, posts: p}
         
         case 'DELETE_COMMENT': 
-            let postsDelete = state.posts.map(post => {
+            let comDelete = state.posts.map(post => {
                 if (post.id === action.payload.id) {
                 return action.payload
                 } else {
                 return post
                 }
             })
-            return {...state, posts: postsDelete}
+            return {...state, posts: comDelete}
 
         case 'LIKE_POST':
             let newPosts = state.posts.map(post => {
@@ -68,6 +68,17 @@ const postReducer = (state = {posts: [], loading: false}, action) => {
                 }
             })
             return {...state, posts: newPosts}
+
+        // case 'LIKE_COMMENT':
+        //     let newComments = state.posts.map(post => {
+        //         if (post.id === action.payload.id) {
+        //             const counter = post.likes += 1
+        //             return {...post, likes: counter}
+        //         } else {
+        //             return post
+        //         }
+        //     })
+        //     return {...state, posts: newPosts}
 
     default:
         return state;
