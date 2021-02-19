@@ -3,6 +3,7 @@ import { Card } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 class PostList extends Component {
+
     render() {
         const { posts } = this.props;
         const postList = posts.map(post => {
@@ -19,15 +20,15 @@ class PostList extends Component {
         })
         
         return (
-                <div className="card card-inverse card-success card-primary mb-3 text-center">
-                <div className="card-block">
-                    <blockquote className="card-blockquote">
-                        {postList}
-                    </blockquote>
-                </div>
-                </div>
-            );
-      }
+            <div className="card card-inverse card-success card-primary mb-3 text-center">
+            <div className="card-block">
+                <blockquote className="card-blockquote">
+                    {postList}
+                </blockquote>
+            </div>
+            </div>
+        )
+    }
 }
 
 export default PostList

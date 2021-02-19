@@ -17,12 +17,12 @@ class PostForm extends Component {
     handleOnChangeContent = (event) => {
         this.setState({...this.state,
             post: {...this.state.post,
-                content: event.target.value
+            content: event.target.value
             }
         })
     }
 
-    handleOnChangeAuthor = event => {
+    handleOnChangeAuthor = (event) => {
         this.setState({...this.state,
             post: {...this.state.post,
             author: event.target.value
@@ -34,19 +34,19 @@ class PostForm extends Component {
         event.preventDefault()
         const post = {...this.state.post}
         if (post.content === '' || post.author === '') {
-          alert('Please fill in both author and content fields before hitting submit.')
-      } else {
-        this.props.addPost(post)
-        this.props.history.push('/posts');
-        this.setState({
-            post: {
+            alert('Please fill in both author and content fields before hitting submit.')
+        } else {
+            this.props.addPost(post)
+            this.props.history.push('/posts');
+            this.setState({
+                post: {
                 content: "",
                 author: "",
                 likes: 0
-            },
-            loading: false,
-        })
-      }
+                },
+                loading: false,
+            })
+        }
     }
 
     render() {
@@ -72,12 +72,12 @@ class PostForm extends Component {
                             <Form.Field style={{fontSize: '15px'}}>
                             <br></br>
                                 <TextArea
-                                placeholder="Your name here"
-                                cols="6"
-                                type="text"
-                                name="author"
-                                value={this.state.author}
-                                onChange={this.handleOnChangeAuthor}
+                                    placeholder="Your name here"
+                                    cols="6"
+                                    type="text"
+                                    name="author"
+                                    value={this.state.author}
+                                    onChange={this.handleOnChangeAuthor}
                                 />
                             </Form.Field>
                             <br></br>

@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 
 const DeleteButton = (props) => {
-
-        return (
-            <button onClick={props.handleOnClick}>Delete Comment</button>
-        )
+    return (
+        <button onClick={props.handleOnClick}>Delete Comment</button>
+    )
 }
 
 export default DeleteButton

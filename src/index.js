@@ -8,12 +8,9 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import 'semantic-ui-css/semantic.min.css'
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk))) // to be able to use getState and dispatch
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk))) // allows to getState from store and dispatch functions asynchronously
 // const BrowserHistory = require('react-router/lib/BrowserHistory').default;
 
 ReactDOM.render(

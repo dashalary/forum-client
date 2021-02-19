@@ -1,6 +1,6 @@
 const postReducer = (state = {posts: [], loading: false}, action) => {
 
-    switch (action.type) {
+    switch (action.type) { // state update depends on the value of action.type
         case "LOADING_POSTS":
             return {
                 ...state,
@@ -21,7 +21,7 @@ const postReducer = (state = {posts: [], loading: false}, action) => {
         case "POST_ADDED":
             return {
                 ...state,
-                posts: [...state.posts, action.payload],
+                posts: [...state.posts, action.payload], // appending the payload (new state, in this case new post) to the bottom of the state non-destructively, as state is meant to be immutable. we're REPLACING state.
                 loading: false
             }
         // case 'DELETE_POST':
@@ -81,7 +81,7 @@ const postReducer = (state = {posts: [], loading: false}, action) => {
         //     return {...state, posts: newPosts}
 
     default:
-        return state;
+        return state; // Redux HATES "undefined". "null" is ok
     }
 }  
 
