@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { addPost } from '../actions/posts';
 import { connect } from 'react-redux';
-import { Button, Form, Header, TextArea } from 'semantic-ui-react'
+import { Button, Form, Header, TextArea, Message } from 'semantic-ui-react'
+
 
 class PostForm extends Component {
 
@@ -15,7 +16,7 @@ class PostForm extends Component {
     }
 
     handleOnChangeContent = (event) => {
-        this.setState({...this.state,
+       this.setState({...this.state,
             post: {...this.state.post,
             content: event.target.value
             }
@@ -48,6 +49,7 @@ class PostForm extends Component {
             })
         }
     }
+    
 
     render() {
         return (
@@ -74,7 +76,6 @@ class PostForm extends Component {
                                 <TextArea
                                     placeholder="Your name here"
                                     cols="6"
-                                    type="text"
                                     name="author"
                                     value={this.state.author}
                                     onChange={this.handleOnChangeAuthor}
