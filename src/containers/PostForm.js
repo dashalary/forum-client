@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { addPost } from '../actions/posts';
 import { connect } from 'react-redux';
+import { useForm } from 'react-hook-form';
 import { Button, Form, Header, TextArea, Message } from 'semantic-ui-react'
 
 
 class PostForm extends Component {
+
+    // const { register, handleSubmit, watch, errors } = useForm();
 
     state = {
         post: {
