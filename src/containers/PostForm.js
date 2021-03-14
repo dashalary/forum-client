@@ -3,6 +3,7 @@ import { addPost } from '../actions/posts';
 import { connect } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { Button, Form, Header, TextArea, Message } from 'semantic-ui-react'
+// import FormError from './FormError'
 
 
 class PostForm extends Component {
@@ -38,6 +39,7 @@ class PostForm extends Component {
         event.preventDefault()
         const post = {...this.state.post}
         if (post.content === '' || post.author === '') {
+            // <FormError />
             alert('Please fill in both author and content fields before hitting submit.')
         } else {
             this.props.addPost(post)
