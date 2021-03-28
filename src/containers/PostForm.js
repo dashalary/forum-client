@@ -56,7 +56,7 @@ class PostForm extends Component {
 
 
     render() {
-        
+
         const formStyle = {
             margin: "auto",
             padding: "20px",
@@ -65,9 +65,7 @@ class PostForm extends Component {
 
         return (
             <div>
-                <div className="card card-inverse card-success card-primary mb-3 text-center">
                     <div className="card-block" style={formStyle}>
-                        <blockquote className="card-blockquote">
                         <Form size="small" onSubmit={this.handleOnSubmit}>
                             <Form.Field style={{fontSize: '15px'}}>
                             <br></br>
@@ -95,9 +93,7 @@ class PostForm extends Component {
                             <br></br>
                             <Button type="submit" color="blue" style={{fontSize: '15px'}}>Add Post</Button>
                         </Form>
-                        </blockquote>
                     </div>
-                </div>
             </div>
         )
     }

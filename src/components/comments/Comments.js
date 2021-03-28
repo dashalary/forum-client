@@ -24,7 +24,7 @@ class Comments extends Component {
         <div>
           <hr />
           <br></br>
-            <p style={{fontSize: '16px'}}><b>Comments:</b></p>
+            <p style={{fontSize: '17px'}}><b>Comments:</b></p>
           <br></br>
             {this.props.comments.map(comment =>
               <li key={comment.id} style={{fontSize: '16px'}}>{comment.content} -- says <b>{comment.author}</b>
