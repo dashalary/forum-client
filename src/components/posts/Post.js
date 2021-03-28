@@ -16,16 +16,16 @@ class Post extends Component {
     render() {
 
         let post = this.props.posts.filter(p => p.id == this.props.match.params.id)[0]
-
+        
         return (
             <div>
-                <div className="card card-inverse card-success card-primary mb-3 text-center">
-                <div className="card-block">
-                    <blockquote className="card-blockquote">
+                <div className="card-block" style={{padding: "30px"}}>
                     <br></br>
+                    
                     <p style={{fontSize: '18px'}}>{post.content}</p>
                     <br></br>
-                    <footer style={{fontSize: '17px'}}>by: <cite title="Source Title">{post.author}</cite></footer>
+                    <footer style={{fontSize: '17px'}}>by: {post.author}</footer>
+                  
                     <br></br>
                     <br></br>
                     <LikeButton post={post} handleOnClick={(e) => this.handleClick(e)} />
@@ -35,8 +35,6 @@ class Post extends Component {
                     <br></br>
                     <br></br>
                     <CommentsContainer post={post}/><br/>
-                    </blockquote>
-                </div>
                 </div>
             </div>
         )
