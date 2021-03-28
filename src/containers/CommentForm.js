@@ -32,11 +32,13 @@ class CommentForm extends Component {
 
   render() {
     const size = "small"
+
     const formStyle = {
       margin: "auto",
       padding: "20px",
       width: "60%"
-  }
+    }
+    
     return (
       <div>
       <Form size={size} onSubmit={this.handleOnSubmit} style={formStyle}>
