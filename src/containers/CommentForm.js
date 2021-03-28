@@ -32,12 +32,17 @@ class CommentForm extends Component {
 
   render() {
     const size = "small"
+    const formStyle = {
+      margin: "auto",
+      padding: "20px",
+      width: "60%"
+  }
     return (
       <div>
-      <Form size={size} onSubmit={this.handleOnSubmit}>
+      <Form size={size} onSubmit={this.handleOnSubmit} style={formStyle}>
         <Form.Field style={{fontSize: '15px'}}>
         <br></br>
-        <p style={{fontSize: '16px'}}><b>What do you think?</b></p>
+        <p style={{fontSize: '17px'}}><b>What do you think?</b></p>
         <br></br>
           <textarea
             cols="6"

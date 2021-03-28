@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { addPost } from '../actions/posts';
 import { connect } from 'react-redux';
-import { useForm } from 'react-hook-form';
-import { Button, Form, Header, TextArea, Message } from 'semantic-ui-react'
+// import { useForm } from 'react-hook-form';
+import { Button, Form, Header, TextArea } from 'semantic-ui-react'
 // import FormError from './FormError'
+// import { Formik, Form, Field, ErrorMessage } from "formik";
 
 
 class PostForm extends Component {
-
-    // const { register, handleSubmit, watch, errors } = useForm();
 
     state = {
         post: {
@@ -54,13 +53,18 @@ class PostForm extends Component {
             })
         }
     }
-    
+
 
     render() {
+        const formStyle = {
+            margin: "auto",
+            padding: "20px",
+            width: "60%"
+        }
         return (
             <div>
                 <div className="card card-inverse card-success card-primary mb-3 text-center">
-                    <div className="card-block">
+                    <div className="card-block" style={formStyle}>
                         <blockquote className="card-blockquote">
                         <Form size="small" onSubmit={this.handleOnSubmit}>
                             <Form.Field style={{fontSize: '15px'}}>
