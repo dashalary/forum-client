@@ -56,11 +56,13 @@ class PostForm extends Component {
 
 
     render() {
+        
         const formStyle = {
             margin: "auto",
             padding: "20px",
             width: "60%"
         }
+
         return (
             <div>
                 <div className="card card-inverse card-success card-primary mb-3 text-center">
