@@ -60,7 +60,8 @@ class PostForm extends Component {
         const formStyle = {
             margin: "auto",
             padding: "20px",
-            width: "60%"
+            width: "60%",
+            height: "100vh"
         }
 
         return (

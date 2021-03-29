@@ -3,11 +3,11 @@ import { Wave } from 'react-animated-text';
 
 const Home = () => {
   return (
-    <>
+    <div id="home">
     <br></br>
     <br></br>
       <h2><Wave text="Welcome to Forum" /></h2>
-    </>
+    </div>
   )
 }
 
