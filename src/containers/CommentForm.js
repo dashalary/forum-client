@@ -45,7 +45,7 @@ class CommentForm extends Component {
       <Form size={size} onSubmit={this.handleOnSubmit} style={formStyle}>
         <Form.Field style={{fontSize: '15px'}}>
         <br></br>
-        <p style={{fontSize: '17px'}}><b>What do you think?</b></p>
+        <p style={{fontSize: '18px'}}><b>What do you think?</b></p>
         <br></br>
           <textarea
             cols="6"

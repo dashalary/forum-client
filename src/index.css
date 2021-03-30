@@ -40,3 +40,7 @@ code {
   display: flex;
   justify-content: center;
 }
+
+.content {
+  visibility: none;
+}

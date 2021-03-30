@@ -16,7 +16,7 @@ class Comments extends Component {
         <div>
           <hr />
           <br></br>
-          Be the first to comment below!
+          <p style={{fontSize: '16px'}}>Be the first to comment below!</p>
         </div>
       )
     } else {
@@ -26,6 +26,7 @@ class Comments extends Component {
           <br></br>
             <p style={{fontSize: '17px'}}><b>Comments:</b></p>
           <br></br>
+         
             {this.props.comments.map(comment =>
               <li key={comment.id} style={{fontSize: '16px'}}>{comment.content} -- says <b>{comment.author}</b>
               <br></br>
@@ -35,6 +36,7 @@ class Comments extends Component {
               <br></br>
               </li>
             )}
+        
           <br></br>
           <hr />
         </div>
