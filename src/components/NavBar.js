@@ -4,15 +4,21 @@ import { Menu } from 'semantic-ui-react'
 
 const link = {
   padding: '12px',
-    // margin: '0 6px 6px',
-    // background: 'pink',
+  borderRadius: '10px',
   textDecoration: 'none'
 }
-  
+
+const menuStyle = {
+  overflow: 'hidden',
+  display: 'flex',
+  fontSize: '20px',
+
+}
+
 const NavBar = () => {
   return (
-    <div className="navbar">
-    <Menu size='large' style={{fontSize: '16px'}} color='teal' inverted>
+    <div class="navbar">
+    <Menu secondary size='large' style={menuStyle} >
       <Menu.Item>
       <NavLink to="/" exact style={link}>Home</NavLink>
       </Menu.Item>

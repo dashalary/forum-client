@@ -26,4 +26,17 @@ code {
 
 #home {
   height: 100vh;
+  display: inline-block;
+  background-color: #f5f5f5;
+  border-radius: 10px 0 10px 0;
+  margin: 10rem auto;
+  width: 40rem;
+  padding: 3rem;
+}
+
+.navbar {
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
