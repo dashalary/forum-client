@@ -68,7 +68,7 @@ class PostForm extends Component {
             <div>
                     <div className="card-block" style={formStyle}>
                         <Form size="small" onSubmit={this.handleOnSubmit}>
-                            <Form.Field style={{fontSize: '15px'}}>
+                            <Form.Field style={{fontSize: '17px'}}>
                             <br></br>
                             <Header as="h3" htmlFor="content">What do you think?</Header>
                             <br></br>
