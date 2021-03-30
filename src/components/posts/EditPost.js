@@ -57,7 +57,9 @@ class EditPost extends React.Component {
 
     
     render() {
+
       const size = "small"
+
       const formStyle = {
         margin: "auto",
         padding: "20px",
@@ -66,36 +68,36 @@ class EditPost extends React.Component {
     }
         return (
             <div>
-                    <Form size={size} style={formStyle} onSubmit={this.handleSubmit}>
-                      <Form.Field style={{fontSize: '15px'}}>
-                      <br></br>
-                      <Header as="h3" htmlFor="content" >What do you think?</Header>
-                      <br></br>
-                      <textarea
-                        cols="6"
-                        placeholder="Your thoughts here"
-                        name="content"
-                        value={this.state.content}
-                        onChange={this.handleOnChangeC}
-                      />
-                      </Form.Field>
-                      <br></br>
-                      <Form.Field style={{fontSize: '15px'}}>
-                      <br></br>
-                      <textarea
-                      cols="6"
-                      placeholder="Your name here"
-                      name="author"
-                      value={this.state.author}
-                      onChange={this.handleOnChangeA}
-                      />
-                      </Form.Field>
-                      <br></br>
-                      <Button color="pink" type="submit">Edit Post</Button>
-                      <br></br>
-                      <br></br>
-                    </Form>
-                    <BackButton handleOnClick={(e) => this.handleGoBack(e)} />
+              <Form size={size} style={formStyle} onSubmit={this.handleSubmit}>
+                <Form.Field style={{fontSize: '15px'}}>
+                <br></br>
+                <Header as="h3" htmlFor="content" >What do you think?</Header>
+                <br></br>
+                  <textarea
+                    cols="6"
+                    placeholder="Your thoughts here"
+                    name="content"
+                    value={this.state.content}
+                    onChange={this.handleOnChangeC}
+                  />
+                </Form.Field>
+                <br></br>
+                <Form.Field style={{fontSize: '15px'}}>
+                <br></br>
+                <textarea
+                  cols="6"
+                  placeholder="Your name here"
+                  name="author"
+                  value={this.state.author}
+                  onChange={this.handleOnChangeA}
+                />
+                </Form.Field>
+                <br></br>
+                <Button color="pink" type="submit">Edit Post</Button>
+                <br></br>
+                <br></br>
+              </Form>
+              <BackButton handleOnClick={(e) => this.handleGoBack(e)} />
             </div>
         ) 
     }
