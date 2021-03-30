@@ -11,7 +11,7 @@ const link = {
 const menuStyle = {
   overflow: 'hidden',
   display: 'flex',
-  fontSize: '20px',
+  fontSize: '22px',
 
 }
 

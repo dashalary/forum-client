@@ -55,14 +55,18 @@ class EditPost extends React.Component {
         }
     }
 
+    
     render() {
       const size = "small"
+      const formStyle = {
+        margin: "auto",
+        padding: "20px",
+        width: "60%",
+        height: "100vh"
+    }
         return (
             <div>
-               <div className="card card-inverse card-success card-primary mb-3 text-center">
-                <div className="card-block">
-                  <blockquote className="card-blockquote">
-                    <Form size={size} onSubmit={this.handleSubmit}>
+                    <Form size={size} style={formStyle} onSubmit={this.handleSubmit}>
                       <Form.Field style={{fontSize: '15px'}}>
                       <br></br>
                       <Header as="h3" htmlFor="content" >What do you think?</Header>
@@ -92,9 +96,6 @@ class EditPost extends React.Component {
                       <br></br>
                     </Form>
                     <BackButton handleOnClick={(e) => this.handleGoBack(e)} />
-                  </blockquote>
-                </div>
-              </div>
             </div>
         ) 
     }
