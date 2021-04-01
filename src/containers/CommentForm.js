@@ -67,7 +67,7 @@ class CommentForm extends Component {
           />
         </Form.Field>
         <br></br>
-        <Button type="submit" color="blue" style={{fontSize: '15px'}}>Add Comment</Button>
+        <Button type="submit" color="blue" style={{fontSize: '16px'}}>Add Comment</Button>
       </Form>
       </div>
     )
