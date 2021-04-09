@@ -6,7 +6,7 @@ const Home = () => {
     <div id="home">
     <br></br>
     <br></br>
-      <h2><Wave text="Welcome to Forum" /></h2>
+      <h2><Wave text="Welcome to Forum" effect="fadeIn" /></h2>
     </div>
   )
 }

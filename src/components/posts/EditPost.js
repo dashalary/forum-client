@@ -94,10 +94,9 @@ class EditPost extends React.Component {
                 </Form.Field>
                 <br></br>
                 <Button color="pink" type="submit">Edit Post</Button>
-                <br></br>
-                <br></br>
+                <BackButton handleOnClick={(e) => this.handleGoBack(e)} />
               </Form>
-              <BackButton handleOnClick={(e) => this.handleGoBack(e)} />
+              {/* <BackButton handleOnClick={(e) => this.handleGoBack(e)} /> */}
             </div>
         ) 
     }
