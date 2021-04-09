@@ -21,11 +21,9 @@ class Post extends Component {
             <div>
                 <div className="card-block" style={{padding: "30px"}}>
                     <br></br>
-                    
                     <p style={{fontSize: '18px'}}>{post.content}</p>
                     <br></br>
                     <footer style={{fontSize: '17px'}}>by: {post.author}</footer>
-                  
                     <br></br>
                     <br></br>
                     <LikeButton post={post} handleOnClick={(e) => this.handleClick(e)} />

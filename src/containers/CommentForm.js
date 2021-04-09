@@ -36,7 +36,7 @@ class CommentForm extends Component {
     const formStyle = {
       margin: "auto",
       padding: "20px",
-      width: "60%",
+      width: "40%",
       height: "100vh"
     }
     
@@ -67,7 +67,7 @@ class CommentForm extends Component {
           />
         </Form.Field>
         <br></br>
-        <Button type="submit" color="blue" style={{fontSize: '16px'}}>Add Comment</Button>
+        <Button type="submit" color="blue" style={{fontSize: '16px'}}>Submit</Button>
       </Form>
       </div>
     )

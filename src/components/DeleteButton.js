@@ -1,4 +1,5 @@
 import React from 'react';
+// import { Button, Icon, Label } from 'semantic-ui-react'
 
 const DeleteButton = (props) => {
     return (

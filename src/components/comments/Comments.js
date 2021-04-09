@@ -31,7 +31,7 @@ class Comments extends Component {
               <li key={comment.id} style={{fontSize: '16px'}}>{comment.content} -- says <b>{comment.author}</b>
               <br></br>
               <br></br>
-              <Button basic color="red" onClick={() => this.handleDelete(comment)} style={{fontSize: '14px'}}>Delete Comment</Button>
+              <Button onClick={() => this.handleDelete(comment)} style={{fontSize: '14px'}}>Delete</Button>
               <br></br>
               <br></br>
               </li>
