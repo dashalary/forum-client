@@ -16,7 +16,7 @@ class Comments extends Component {
         <div>
           <hr />
           <br></br>
-          <p style={{fontSize: '16px'}}>Be the first to comment below!</p>
+          <p style={{fontSize: '17px'}}>Be the first to comment below!</p>
         </div>
       )
     } else {

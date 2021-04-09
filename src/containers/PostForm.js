@@ -81,7 +81,7 @@ class PostForm extends Component {
                                 />
                             </Form.Field>
                             <br></br>
-                            <Form.Field style={{fontSize: '15px'}}>
+                            <Form.Field style={{fontSize: '17px'}}>
                             <br></br>
                                 <TextArea
                                     placeholder="Your name here"
