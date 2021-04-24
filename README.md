@@ -1,6 +1,6 @@
 ## Forum
 
-Welcome to Forum! This single page app was made to facilitate conversations and engagement through posts and comments. It uses a React-Redux frontend and a Rails API backend, the latter of which can be found [here](https://github.com/dashalary/forum-api)
+Welcome to Forum! This single page app was made to facilitate conversations and engagement through posts and comments. It uses a React-Redux frontend and a Rails API backend, the latter of which can be found [here.](https://github.com/dashalary/forum-api)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
